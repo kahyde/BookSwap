@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Book Swap</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="validation.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<img id="logo" src="logo.png">
+			<h1>Book Swap</h1>
+			<div id="nav">
+				<ul>
+					<li><a href="home.html">Home</a></li>
+					<li><a href="registration.html">Register</a></li>
+					<li><a href="login.html">Login</a></li>
+          <li><a href="sell.html">Sell</a></li>
+					<li><a href="search.html">Search</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="main">
+			<div class="topSection" id="searchTopSection">
+				<h2>Search</h2>
+        <p>This is where you can search for books to buy with your points.</p>
+        <p>Enter the Author or Title (or both) of the book you're looking for to search.</p>
+        <form action="#" method="POST" onsubmit="return validateSearchForm()">
+          <div class="row">
+        		<label for="titleSearch">Title:</label><br />
+        		<input id="titleSearch" name="titleSearch" type="text" value="" /><br />
+        	</div>
+          <div class="row">
+        		<label for="authorSearch">Author:</label><br />
+        		<input id="authorSearch" name="authorSearch" type="text" value="" /><br /><br />
+						<div class="validate" id="validateSearch"></div>
+        	</div>
+        	<br /><input class="submit_button" type="submit" value="Search" />
+        </form>
+      </div>
+		</div>
+		<div id="footer">
+			<p>&copy; Copyright Book Swap 2016</p>
+		</div>
+	</body>
+</html>

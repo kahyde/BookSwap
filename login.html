@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Book Swap</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="validation.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<img id="logo" src="logo.png">
+			<h1>Book Swap</h1>
+			<div id="nav">
+				<ul>
+					<li><a href="home.html">Home</a></li>
+					<li><a href="registration.html">Register</a></li>
+					<li><a href="login.html">Login</a></li>
+          <li><a href="sell.html">Sell</a></li>
+					<li><a href="search.html">Search</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="main">
+			<div class="topSection" id="logTopSection">
+				<h2>Login</h2>
+        <p>Please enter your username and password and click submit to login:</p>
+        <form action="#" method="POST" onsubmit="return validateLoginForm()">
+          <div class="row">
+        		<label for="userlog">Username:</label><br />
+        		<input id="userlog" name="userlog" type="text" value=""/><br />
+						<div class="validate" id="validateUserLog"></div>
+        	</div>
+          <div class="row">
+        		<label for="passlog">Password:</label><br />
+        		<input id="passlog" name="passlog" type="text" value=""/><br />
+						<div class="validate" id="validatePassLog"></div>
+        	</div>
+        	<br /><input class="submit_button" type="submit" value="Submit" />
+        </form>
+      </div>
+		</div>
+		<div id="footer">
+			<p>&copy; Copyright Book Swap 2016</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Book Swap</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="validation.js"></script>
+	</head>
+	<body>
+		<div id="header">
+			<img id="logo" src="logo.png">
+			<h1>Book Swap</h1>
+			<div id="nav">
+				<ul>
+					<li><a href="home.html">Home</a></li>
+					<li><a href="registration.html">Register</a></li>
+					<li><a href="login.html">Login</a></li>
+					<li><a href="sell.html">Sell</a></li>
+          <li><a href="search.html">Search</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="main">
+			<div class="topSection" id="sellTopSection">
+				<h2>Sell</h2>
+				<p>This is where you can add and delete books to give away in exchange for points.</p>
+				<p>Please note that you must be logged in to add or delete books.</p>
+			</div>
+			<div class="secondSection column1" id="sellColumn">
+				<h3>Add</h3>
+        <form action="#" method="POST" onsubmit="return validateAddForm()">
+          <div class="row">
+        		<label for="titleAdd">Title:</label><br />
+        		<input id="titleAdd" name="titleAdd" type="text" value=""/><br />
+						<div class="validate" id="validateTitleAdd"></div>
+        	</div>
+          <div class="row">
+        		<label for="authorAdd">Author:</label><br />
+        		<input id="authorAdd" name="authorAdd" type="text" value=""/><br />
+						<div class="validate" id="validateAuthorAdd"></div>
+        	</div>
+          <div class="row">
+            <label for="publisherAdd">Publisher:</label><br />
+            <input id="publisherAdd" name="publisherAdd" type="text" value="" /><br />
+          </div>
+          <div class="row">
+            <label for="yearAdd">Year Published:</label><br />
+            <input id="yearAdd" name="yearAdd" type="text" value="" /><br />
+          </div>
+          <div class="row">
+        		<label for="conditionAdd">Condition:</label><br />
+        		<input id="conditionAdd" name="conditionAdd" type="text" value=""/><br />
+						<div class="validate" id="validateConditionAdd"></div>
+        	</div>
+        	<br /><input class="submit_button" type="submit" value="Add" />
+        </form>
+			</div>
+			<div class="secondSection column2" id="sellColumn">
+				<h3>Delete</h3>
+        <form action="#" method="POST" onsubmit="return validateDelForm()">
+          <div class="row">
+        		<label for="titleDel">Title:</label><br />
+        		<input id="titleDel" name="titleDel" type="text" value=""/><br />
+						<div class="validate" id="validateTitleDel"></div>
+        	</div>
+          <div class="row">
+        		<label for="authorDel">Author:</label><br />
+        		<input id="authorDel" name="authorDel" type="text" value="" /><br />
+						<div class="validate" id="validateAuthorDel"></div>
+        	</div>
+        	<br /><input class="submit_button" type="submit" value="Delete" />
+        </form>
+			</div>
+		</div>
+		<div id="footer">
+			<p>&copy; Copyright Book Swap 2016</p>
+		</div>
+	</body>
+</html>

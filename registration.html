@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Book Swap</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="validation.js"></script>
+	</head>
+	<body>
+		<div id="header">
+			<img id="logo" src="logo.png">
+			<h1>Book Swap</h1>
+			<div id="nav">
+				<ul>
+					<li><a href="home.html">Home</a></li>
+					<li><a href="registration.html">Register</a></li>
+					<li><a href="login.html">Login</a></li>
+          <li><a href="sell.html">Sell</a></li>
+					<li><a href="search.html">Search</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="main">
+			<div class="topSection" id="regTopSection">
+				<h2>Registration</h2>
+        <p>Please fill in the following form and click submit to register:</p>
+        <p>You only need to register once - if you've already registered, head to the 'Login' page instead.</p>
+        <form action="#" method="POST" onsubmit="return validateRegistrationForm()">
+        	<div class="row">
+        		<label for="fname">First Name:</label><br />
+        		<input id="fname" name="fname" type="text" value="" /><br />
+						<div class="validate" id="validateFname"></div>
+        	</div>
+          <div class="row">
+        		<label for="lname">Last Name:</label><br />
+        		<input id="lname" name="lname" type="text" value="" /><br />
+						<div class="validate" id="validateLname"></div>
+        	</div>
+          <div class="row">
+        		<label for="address">Address:</label><br />
+        		<input id="address" name="address" type="text" value="" /><br />
+						<div class="validate" id="validateAddress"></div>
+        	</div>
+          <div class="row">
+        		<label for="number">Phone Number:</label><br />
+        		<input id="number" name="number" type="text" value="" /><br />
+						<div class="validate" id="validateNumber"></div>
+        	</div>
+        	<div class="row">
+        		<label for="email">Your email:</label><br />
+        		<input id="email" name="email" type="text" value="" /><br />
+						<div class="validate" id="validateEmail"></div>
+        	</div>
+          <div class="row">
+        		<label for="user">Username:</label><br />
+        		<input id="user" name="user" type="text" value="" /><br />
+						<div class="validate" id="validateUserReg"></div>
+        	</div>
+          <div class="row">
+        		<label for="pass">Password:</label><br />
+        		<input id="pass" name="pass" type="text" value="" /><br />
+						<div class="validate" id="validatePassReg"></div>
+        	</div>
+          <div class="row">
+        		<label for="conpass">Confirm Password:</label><br />
+        		<input id="conpass" name="conpass" type="text" value="" /><br />
+						<div class="validate" id="validateConPass"></div>
+        	</div>
+        	<br /><input class="submit_button" type="submit" value="Submit" />
+        </form>
+      </div>
+		</div>
+		<div id="footer">
+			<p>&copy; Copyright Book Swap 2016</p>
+		</div>
+	</body>
+</html>
