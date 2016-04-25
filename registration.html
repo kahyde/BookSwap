@@ -3,7 +3,120 @@
 	<head>
 		<title>Book Swap</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="validation.js"></script>
+		<script type="text/javascript">
+			function validateNotEmpty(x, y){
+			  var input = document.getElementById(x).value;
+			  if (input == ""){
+			    document.getElementById(y).innerHTML = "This field must not be empty.<br/><br/>";
+			    return false;
+			  }
+			  return true;
+			}
+
+			function validateEmail(x){
+			  var atCount = 0;
+			  for (var i = 0; i < x.length; i++){
+			    if (x[i] == '@'){
+			      atCount++;
+			    }
+			  }
+			  var pattern = /\S+@\S+\.[(com)|(edu)|(net)]/;
+			  var match = pattern.test(x);
+
+			  if ((!match) || (atCount != 1)){
+			    return false;
+			  }
+			  else {
+			    return true;
+			  }
+			}
+
+			function validateNumber(x){
+			  var pattern1 = /^0\d{8}/;
+			  var pattern2 = /^02\d{8}/;
+
+			  if ((pattern1.test(x)) || (pattern2.test(x))){
+			    return true;
+			  }
+			  else {
+			    return false;
+			  }
+			}
+			function validateRegistrationForm(){
+				document.getElementById("validateFname").innerHTML = "";
+				document.getElementById("validateLname").innerHTML = "";
+				document.getElementById("validateAddress").innerHTML = "";
+				document.getElementById("validateNumber").innerHTML = "";
+				document.getElementById("validateEmail").innerHTML = "";
+				document.getElementById("validateUserReg").innerHTML = "";
+				document.getElementById("validatePassReg").innerHTML = "";
+				document.getElementById("validateConPass").innerHTML = "";
+
+				var fname = document.getElementById("fname").value;
+				var lname = document.getElementById("lname").value;
+				var address = document.getElementById("address").value;
+				var number = document.getElementById("number").value;
+				var email = document.getElementById("email").value;
+				var user = document.getElementById("user").value;
+				var pass = document.getElementById("pass").value;
+				var conpass = document.getElementById("conpass").value;
+
+				var error = false;
+
+				if (!(validateNotEmpty('fname', 'validateFname'))){
+					error = true;
+				}
+				if (!(validateNotEmpty('lname', 'validateLname'))){
+					error = true;
+				}
+				if (!(validateNotEmpty('address', 'validateAddress'))){
+					error = true;
+				}
+				if (!(validateNotEmpty('number', 'validateNumber'))){
+					error = true;
+				}
+				if (!(validateNotEmpty('email', 'validateEmail'))){
+					error = true;
+				}
+				if (!(validateNotEmpty('user', 'validateUserReg'))){
+					error = true;
+				}
+				if (!(validateNotEmpty('pass', 'validatePassReg'))){
+					error = true;
+				}
+				if (!(validateNotEmpty('conpass', 'validateConPass'))){
+					error = true;
+				}
+				if (user.length < 6){
+					document.getElementById("validateUserReg").innerHTML = "Username must be at least 6 characters.";
+					error = true;
+				}
+				if (pass.length < 6){
+					document.getElementById("validatePassReg").innerHTML = "Password must be at least 6 characters.";
+					error = true;
+				}
+				if (pass != conpass){
+					document.getElementById("validateConPass").innerHTML = "Confirm password field must match the password field.";
+					error = true;
+				}
+				if (!(validateEmail(email))){
+					document.getElementById("validateEmail").innerHTML = "Invalid email";
+					error = true;
+				}
+				if (!(validateNumber(number))){
+					document.getElementById("validateNumber").innerHTML = "Invalid number";
+					error = true;
+				}
+
+				if (error){
+					return false;
+				}
+				else {
+					alert("Registration Successful!");
+					return true;
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<div id="header">

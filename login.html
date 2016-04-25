@@ -3,7 +3,34 @@
 	<head>
 		<title>Book Swap</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="validation.js"></script>
+		<script type="text/javascript">
+			function validateNotEmpty(x, y){
+			  var input = document.getElementById(x).value;
+			  if (input == ""){
+			    document.getElementById(y).innerHTML = "This field must not be empty.<br/><br/>";
+			    return false;
+			  }
+			  return true;
+			}
+			function validateLoginForm(){
+			  document.getElementById("validateUserLog").innerHTML = "";
+			  document.getElementById("validatePassLog").innerHTML = "";
+			  var user = document.getElementById("userlog").value;
+			  var pass = document.getElementById("passlog").value;
+
+				validateNotEmpty('userlog', 'validateUserLog')
+			  validateNotEmpty('passlog', 'validatePassLog')
+			
+			  if (user == "kelsey" && pass == "1234"){
+			    alert("Login Successful!");
+			    return true;
+			  }
+			  else {
+			    document.getElementById("validatePassLog").innerHTML += "Invalid username and password combination.<br/><br/>";
+			    return false;
+			  }
+			}
+		</script>
 	</head>
 	<body>
 		<div class="header">

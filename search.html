@@ -3,7 +3,30 @@
 	<head>
 		<title>Book Swap</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="validation.js"></script>
+		<script type="text/javascript">
+			function validateNotEmpty(x, y){
+			  var input = document.getElementById(x).value;
+			  if (input == ""){
+			    document.getElementById(y).innerHTML = "This field must not be empty.<br/><br/>";
+			    return false;
+			  }
+			  return true;
+			}
+			function validateSearchForm(){
+			  document.getElementById("validateSearch").innerHTML = "";
+			  var title = document.getElementById("titleSearch").value;
+			  var author = document.getElementById("authorSearch").value;
+
+			  if ((title == "") && (author == "")){
+			    document.getElementById("validateSearch").innerHTML = "You must enter at least a title or an author to search for a book.";
+			    return false;
+			  }
+			  else {
+			    alert("Search Successful!");
+			    return true;
+			  }
+			}
+		</script>
 	</head>
 	<body>
 		<div class="header">

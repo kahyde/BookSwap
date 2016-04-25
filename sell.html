@@ -3,7 +3,57 @@
 	<head>
 		<title>Book Swap</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="validation.js"></script>
+		<script type="text/javascript">
+			function validateNotEmpty(x, y){
+			  var input = document.getElementById(x).value;
+			  if (input == ""){
+			    document.getElementById(y).innerHTML = "This field must not be empty.<br/><br/>";
+			    return false;
+			  }
+			  return true;
+			}
+			function validateAddForm(){
+			  document.getElementById("validateTitleAdd").innerHTML = "";
+			  document.getElementById("validateAuthorAdd").innerHTML = "";
+			  document.getElementById("validateConditionAdd").innerHTML = "";
+
+			  var error = false;
+
+			  if (!(validateNotEmpty('titleAdd', 'validateTitleAdd'))){
+			    error = true;
+			  }
+			  if (!(validateNotEmpty('authorAdd', 'validateAuthorAdd'))){
+			    error = true;
+			  }
+			  if (!(validateNotEmpty('conditionAdd', 'validateConditionAdd'))){
+			    error = true;
+			  }
+
+			  if (error){
+			    return false;
+			  }
+			  else {
+			    alert("Book added successfully!");
+			    return true;
+			  }
+			}
+
+			function validateDelForm(){
+			  document.getElementById("validateTitleDel").innerHTML = "";
+			  document.getElementById("validateAuthorDel").innerHTML = "";
+
+			  var title = validateNotEmpty('titleDel', 'validateTitleDel');
+			  var author = validateNotEmpty('authorDel', 'validateAuthorDel');
+
+			  if (title && author){
+			    alert("Book deleted successfully!");
+			    return true;
+			  }
+			  else {
+			    return false;
+			  }
+			}
+		</script>
 	</head>
 	<body>
 		<div id="header">
